@@ -1,25 +1,31 @@
-import './Header.module.scss';
+import './Header.scss';
+import logo from './img/logo.svg';
+import basket from './img/basket.svg';
+import liked from './img/liked.svg';
+import profile from './img/profile.svg';
 
 const Header = () => {
 	return (
 		<div className="section-header">
-			<div className="left__box">
-				<img src="./img/logo" alt="logo" />
-				<div className="titles">
-					<span>REACT SNEAKERS</span>
-					<span>Магазин лучших кроссовок</span>
-				</div>
-			</div>
-			<div className="right__box">
-				<div className="basket">
-					<img src="" alt="basket" />
-					<span className="total"></span>
-				</div>
-				<div className="liked">
-					<img src="" alt="liked" />
-				</div>
-				<div className="profile">
-					<img src="" alt="profile" />
+			<div className="container">
+				<div className="wrap">
+					<div className="left__box">
+						<img src={logo} alt="logo" />
+						<div className="titles">
+							<span className="titile_snk">REACT SNEAKERS</span>
+							<span className="titile_ru">Магазин лучших кроссовок</span>
+						</div>
+					</div>
+					<div className="right__box">
+						<div className="basket">
+							<img src={basket} alt="basket" />
+							<span className="total">1500 rub</span>
+						</div>
+
+						<img src={liked} alt="liked" />
+
+						<img src={profile} alt="profile" />
+					</div>
 				</div>
 			</div>
 		</div>
