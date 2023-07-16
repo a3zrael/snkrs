@@ -3,7 +3,63 @@
 	max-width: 1080px;
 	margin: 0 auto;
 
-    .wrap{
-        dispey:flex
+    .wrap__swiper{
+        display: flex;
+		justify-content:center;
+		
+
+		.left{
+			background-color: #F4EFE9;
+			border-radius: 20px 0 0 20px;
+			position: relative;
+			.titie{
+				width: 70%;
+				text-align: left;
+				position: inherit;
+				left: 45px;
+				top: 61px;
+				color: #000;
+				font-family: Inter;
+				font-size: 38px;
+				font-style: normal;
+				font-weight: 700;
+				line-height: normal;
+				
+
+				span{
+					color: #8BB43C;
+					font-family: Inter;
+					font-size: 38px;
+					font-style: normal;
+					font-weight: 700;
+					line-height: normal;
+				}
+
+			}
+
+			.btn{
+				background: #A5D364;
+				border: none;
+				border-radius: 110px;
+				padding: 17px 55px;
+				position: inherit;
+				top:80px;
+				left: 35px;
+				color: #FFF;
+				text-align: center;
+				font-family: Inter;
+				font-size: 16px;
+				font-style: normal;
+				font-weight: 700;
+				line-height: normal;
+				text-transform: uppercase;
+			}
+
+			img{
+				position: absolute;
+				top: 10px;
+				left: 10px;
+			}
+		}
     }
 }

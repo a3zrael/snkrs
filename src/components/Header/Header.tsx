@@ -6,9 +6,9 @@ import profile from './img/profile.svg';
 
 const Header = () => {
 	return (
-		<div className="section-header">
+		<div className="section__header">
 			<div className="container">
-				<div className="wrap">
+				<div className="wrap__header">
 					<div className="left__box">
 						<img src={logo} alt="logo" />
 						<div className="titles">

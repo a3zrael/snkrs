@@ -1,0 +1,37 @@
+.section__search{
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 20px 40px 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FFF;
+    
+    .title{
+        color: #000;
+        font-family: Inter;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+
+    .box__input{
+        position: relative;
+
+        img{
+            position: inherit;
+            top: 3px;
+            left: 30px;
+        }
+
+        input{
+            width: 250px;
+            height: 45px;
+            padding: 0 0 0 40px;
+            flex-shrink: 0;
+            border-radius: 10px;
+            border: 1px solid #F3F3F3;
+        }
+    }
+}
