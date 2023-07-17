@@ -2,14 +2,16 @@ import './App.module.scss';
 
 import Header from '../Header/Header';
 import Swiper from '../Swiper/Swiper';
-import Search from '../Search/Search';
+import Content from '../Content/Content';
+import ItemCard from '../ui/itemCard/itemCard';
 
 const App = () => {
 	return (
 		<>
 			<Header />
 			<Swiper />
-			<Search />
+			<Content />
+			{/* <ItemCard /> */}
 		</>
 	);
 };

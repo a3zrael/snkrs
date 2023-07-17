@@ -1,0 +1,75 @@
+.card{
+    max-width: 195px;
+    height: 260px;
+    flex-shrink: 0;
+    margin: 20px;
+    padding: 20px;
+    margin: 0 auto;
+    border-radius: 40px;
+    border: 1px solid #F3F3F3;
+    background: #FFF;
+    
+    .name{
+        color: #000;
+        font-family: Inter;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    .cros{
+        max-width: 133px;
+        padding: 0 0 15px 0;
+    }
+
+    .plus_basket{
+        display: flex;
+        justify-content: space-between;
+        padding: 18px 0;
+
+        .info{
+            display: flex;
+            flex-direction: column;
+
+            .price{
+                color: #BDBDBD;
+                font-family: Inter;
+                font-size: 11px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: normal;
+                text-transform: uppercase;
+            }
+
+            .sum_price{
+                color: #000;
+                font-family: Inter;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+            }
+            
+        }
+        
+
+
+        button{
+            width: 32px;
+            height: 32px;
+            border: none;
+            border-radius: 10px;
+            flex-shrink: 0;
+            cursor: pointer;
+
+            .plus{
+                
+            }
+
+            .plus_active{
+                display: none;
+            }
+        }
+    }
+}
