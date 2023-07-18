@@ -1,0 +1,31 @@
+.wrap_card{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #F3F3F3;
+    border-radius: 20px;
+    padding: 20px;
+
+    .snkr{
+        width: 25%;
+    }
+
+    .info{
+        width: 50%;
+        color: #000;
+        font-family: Inter;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+
+        .price{
+            color: #000;
+            font-family: Inter;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+        }
+    }
+}

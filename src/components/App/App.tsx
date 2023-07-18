@@ -3,7 +3,7 @@ import './App.module.scss';
 import Header from '../Header/Header';
 import Swiper from '../Swiper/Swiper';
 import Content from '../Content/Content';
-import ItemCard from '../ui/itemCard/itemCard';
+import Basket from '../Basket/Basket';
 
 const App = () => {
 	return (
@@ -11,7 +11,7 @@ const App = () => {
 			<Header />
 			<Swiper />
 			<Content />
-			{/* <ItemCard /> */}
+			<Basket />
 		</>
 	);
 };

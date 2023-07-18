@@ -8,8 +8,11 @@ import activeLiked from './img/activeLiked.svg'
 
 const itemCard = () => {
     return(
-        <div className='card'>     
-            <img className='cros' src={cros} alt="" />
+        <div className='card'>
+            <div className='favorite'>
+                <img src={liked} alt="like" />     
+            </div>
+            <img className='cros' src={cros} alt="snkrs" />
             <p className='name'>Мужские Кроссовки Nike Blazer Mid Suede</p> 
             <div className='plus_basket'>
                 <div className='info'>
@@ -17,7 +20,7 @@ const itemCard = () => {
                     <span className='sum_price'>12 900 rub</span>
                 </div>
                 <button>
-                    <img className='plus' src={plus} alt="" />
+                    <img className='plus' src={plus} alt="plus" />
                     <img className='plus_active' src={greenPlus} alt="" />
                 </button>
             </div>
