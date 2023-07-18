@@ -12,8 +12,10 @@ const Content = () => {
                     <input type="text" placeholder='Поиск...'/>
                 </div>
             </div>
-            <div className='wrap_snkrs'><ItemCard/>
-            <ItemCard/><ItemCard/><ItemCard/></div>
+            <div className='wrap_snkrs'>
+                <ItemCard/>
+            <ItemCard/><ItemCard/><ItemCard/>
+            </div>
             
         </div>
     )

@@ -1,10 +1,10 @@
 import './button.scss'
+interface ButtonProps {value:string,imgFirls?:string,imgLast?:string}
 
-const button = () => {
-return(<button className='' >Купить</button>)
+const button = ({value,imgFirls,imgLast}:ButtonProps) => {
+return(<button><img src={imgFirls} alt="" /> {value} <img src={imgLast} alt="" /></button>)
 }
 
-//TODO разбить на компоненты
 //TODO сделать гибкую кнопку 
 
 export default button;

@@ -10,7 +10,8 @@ const itemBasket = () =>{
                 <p>Мужские Кроссовки Nike Air Max 270</p>
                 <div className="price">12 999 руб.</div>
             </div>
-            <img src={cancel} alt="" />
+            
+            <button><img className='last__cancel' src={cancel} alt="" /></button>
         </div>
     )
 }
