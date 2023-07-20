@@ -10,7 +10,7 @@ const Basket = () =>{
         <div className='overlay'> 
             <div className='wrap_basket'>
                 <h3 className='titile_basket'>Корзина</h3>
-                {/* <div className='basket'>
+                <div className='basket'>
                     <div className='list'>
                         <ItemBasket/>
                     </div>
@@ -19,7 +19,7 @@ const Basket = () =>{
                         <div className='item'><p>Налог 5%:</p><div className='border_1'></div><span>1074 руб.</span></div>
                         <div className='item item_btn'><Button value='Оформить заказ' imgLast={arro}/></div>
                     </div>
-                </div> */}
+                </div>
                 {/* <div className="empty_basket">
                     <img src={box} alt="" />
                     <h3 className='item'>Корзина пустая</h3>

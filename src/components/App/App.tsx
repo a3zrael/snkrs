@@ -11,7 +11,7 @@ const App = () => {
 			<Header />
 			<Swiper />
 			<Content />
-			<Basket />
+			{/* <Basket /> */}
 		</>
 	);
 };

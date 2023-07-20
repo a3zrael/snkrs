@@ -14,7 +14,10 @@ const Content = () => {
             </div>
             <div className='wrap_snkrs'>
                 <ItemCard/>
-            <ItemCard/><ItemCard/><ItemCard/>
+                <ItemCard/>
+                <ItemCard/>
+                
+                
             </div>
             
         </div>
