@@ -14,6 +14,11 @@
         transform: translateY(-3px);
     }
 
+    .img_box{
+        display: flex;
+        justify-content: center;
+    }
+
     .favorite{
         position: absolute;
         cursor: pointer;
