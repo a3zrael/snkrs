@@ -2,7 +2,7 @@ import './itemCard.scss'
 import plus from './img/plus.svg'
 import greenPlus from './img/greenPlus.svg'
 import liked from './img/liked.svg'
-import activeLiked from './img/activeLiked.svg'
+// import activeLiked from './img/activeLiked.svg'
 
 interface itemCardProps {cros:string, name:string, price:number}
 
