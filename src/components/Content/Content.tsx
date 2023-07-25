@@ -17,7 +17,11 @@ const Content = () => {
             </div>
             <div className='wrap_snkrs'>
                 {snkrData.map((obj) => (
-                    <ItemCard cros={obj.img} name={obj.name} price={obj.price}/>  
+                    <ItemCard 
+                    cros={obj.img} 
+                    name={obj.name} 
+                    price={obj.price}
+                    />  
                 ))}
             </div>
             

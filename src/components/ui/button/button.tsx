@@ -5,6 +5,5 @@ const button = ({value,imgFirls,imgLast}:ButtonProps) => {
 return(<button><img src={imgFirls} alt="" /> {value} <img src={imgLast} alt="" /></button>)
 }
 
-//TODO сделать гибкую кнопку 
 
 export default button;

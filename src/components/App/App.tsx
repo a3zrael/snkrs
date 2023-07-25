@@ -17,3 +17,5 @@ const App = () => {
 };
 
 export default App;
+
+//TODO Посмотреть видос по TS
