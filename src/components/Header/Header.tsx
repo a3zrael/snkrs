@@ -4,7 +4,9 @@ import basket from './img/basket.svg';
 import liked from './img/liked.svg';
 import profile from './img/profile.svg';
 
-const Header = () => {
+interface HeaderProps {onClickBasket: string}
+
+const Header = ({onClickBasket}: HeaderProps) => {
 	return (
 		<div className="section__header">
 			<div className="container">
@@ -17,13 +19,11 @@ const Header = () => {
 						</div>
 					</div>
 					<div className="right__box">
-						<div className="basket">
+						<div className="basket" onClick={onClickBasket}>
 							<img src={basket} alt="basket" />
 							<span className="total">1500 rub</span>
 						</div>
-
 						<img src={liked} alt="liked" />
-
 						<img src={profile} alt="profile" />
 					</div>
 				</div>

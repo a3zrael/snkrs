@@ -2,14 +2,22 @@ import './Basket.scss'
 import ItemBasket from '../ui/itemBasket/itemBasket';
 import Button from '../ui/button/button';
 import arro from './img/arro.svg'
-import box from './img/box.svg'
-import compl from './img/complete.svg'
+import krest from './img/krest.svg'
+// import box from './img/box.svg'
+// import compl from './img/complete.svg'
 
-const Basket = () =>{
+interface BasketProps {onCloseBasket: string}
+
+const Basket = ({onCloseBasket}: BasketProps) =>{
     return(
         <div className='overlay'> 
             <div className='wrap_basket'>
-                <h3 className='titile_basket'>Корзина</h3>
+                <div className='titile_close_basket'>
+                    <h3 className='titile_basket'>Корзина</h3> 
+                    <button onClick={onCloseBasket}>
+                        <img src={krest} alt=""/>
+                    </button>
+                </div>
                 <div className='basket'>
                     <div className='list'>
                         <ItemBasket/>
