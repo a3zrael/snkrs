@@ -2,21 +2,23 @@ import './App.module.scss';
 
 import { useState } from 'react';
 
-import Header from '../Header/Header';
-import Swiper from '../Swiper/Swiper';
-import Content from '../Content/Content';
-import Basket from '../Basket/Basket';
+import Header from '../header/header';
+import Swiper from '../swiper/swiper';
+import Content from '../content/content';
+import Basket from '../basket/basket';
 
 const App = () => {
 
-	const [basketOpened, setBasketOpened] = useState(false)
+	const [basketOpened, setBasketOpened] = useState(false);
 
 	return (
 		<>
-			<Header onClickBasket={() => setBasketOpened(true)}/>
+			<Header onClickBasket={() => setBasketOpened(true)} />
 			<Swiper />
 			<Content />
-			{basketOpened ? <Basket onCloseBasket={() => setBasketOpened(false)}/> : null}
+			{basketOpened ? (
+				<Basket onCloseBasket={() => setBasketOpened(false)} />
+			) : null}
 		</>
 	);
 };

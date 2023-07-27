@@ -1,4 +1,4 @@
-import './Swiper.scss';
+import './swiper.scss';
 import wrame from './img/img_swiper.svg';
 import adidas from './img/adidas.svg';
 
@@ -11,7 +11,7 @@ const Swiper = () => {
 					<h2 className="titie">
 						<span>Stan Smith</span>, Forever!
 					</h2>
-					<button className='btn'>Купить</button>
+					<button className="btn">Купить</button>
 				</div>
 				<img src={wrame} alt="" />
 			</div>
