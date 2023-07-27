@@ -9,9 +9,12 @@ module.exports = {
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    ecmaVersion: 'latest',
+    ecmaFeatures: {
+      jsx: true,
+    },
+    ecmaVersion: 12,
     sourceType: 'module',
-    project: true,
+    // project: 'tsconfig.json',
     tsconfigRootDir: __dirname,
   },
   plugins: ['react-refresh'],

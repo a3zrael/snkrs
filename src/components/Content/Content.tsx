@@ -1,9 +1,22 @@
 import './Content.scss';
 import lupa from './img/lupa.svg';
 import ItemCard from '../ui/itemCard/itemCard.tsx';
-import { snkrData } from './content.data.tsx';
+import { useEffect, useState } from 'react';
 
 const Content = () => {
+	
+	const [items, setItems] = useState([]);
+
+	useEffect(() => {
+		fetch('https://64c1236cfa35860baea00c5e.mockapi.io/items')
+			.then((res) => {
+				return res.json();
+			})
+			.then((json) => {
+				setItems(json);
+			});
+	}, []);
+
 	return (
 		<div className="section__content">
 			<div className="search">
@@ -14,8 +27,12 @@ const Content = () => {
 				</div>
 			</div>
 			<div className="wrap_snkrs">
-				{snkrData.map((obj) => (
-					<ItemCard cros={obj.img} name={obj.name} price={obj.price} />
+				{items.map((obj) => (
+					<ItemCard
+						cros={'./src/components/content/img/' + obj['img'] + '.svg'}
+						name={obj.name}
+						price={obj.price}
+					/>
 				))}
 			</div>
 		</div>

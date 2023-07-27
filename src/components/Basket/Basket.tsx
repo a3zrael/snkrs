@@ -7,7 +7,7 @@ import krest from './img/krest.svg';
 // import compl from './img/complete.svg'
 
 interface BasketProps {
-	onCloseBasket: string;
+	onCloseBasket: () => void;
 }
 
 const Basket = ({ onCloseBasket }: BasketProps) => {

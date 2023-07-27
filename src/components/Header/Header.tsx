@@ -5,7 +5,7 @@ import liked from './img/liked.svg';
 import profile from './img/profile.svg';
 
 interface HeaderProps {
-	onClickBasket: string;
+	onClickBasket: () => void;
 }
 
 const Header = ({ onClickBasket }: HeaderProps) => {
