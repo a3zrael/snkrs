@@ -4,7 +4,7 @@ import ItemCard from '../ui/itemCard/itemCard.tsx';
 import { useEffect, useState } from 'react';
 
 const Content = () => {
-	
+
 	const [items, setItems] = useState([]);
 
 	useEffect(() => {
@@ -33,7 +33,7 @@ const Content = () => {
 						name={obj.name}
 						price={obj.price}
 					/>
-				))}
+				))} 
 			</div>
 		</div>
 	);

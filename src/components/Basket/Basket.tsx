@@ -8,9 +8,10 @@ import krest from './img/krest.svg';
 
 interface BasketProps {
 	onCloseBasket: () => void;
+	items: any;
 }
 
-const Basket = ({ onCloseBasket }: BasketProps) => {
+const Basket = ({ onCloseBasket, items }: BasketProps) => {
 	return (
 		<div className="wrap_close">
 			<div className="overlay" onClick={onCloseBasket}></div>
@@ -23,7 +24,9 @@ const Basket = ({ onCloseBasket }: BasketProps) => {
 				</div>
 				<div className="basket">
 					<div className="list">
-						<ItemBasket />
+						{items.map((obj: any) =>(
+							<ItemBasket /> 
+						))}
 					</div>
 					<div className="wrap_info">
 						<div className="item">

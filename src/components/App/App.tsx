@@ -8,8 +8,8 @@ import Content from '../content/content';
 import Basket from '../basket/basket';
 
 const App = () => {
-
 	const [basketOpened, setBasketOpened] = useState(false);
+	const [cardItems, setCarItems] = useState();
 
 	return (
 		<>
