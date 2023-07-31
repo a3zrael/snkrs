@@ -4,7 +4,6 @@ import ItemCard from '../ui/itemCard/itemCard.tsx';
 import { useEffect, useState } from 'react';
 
 const Content = () => {
-
 	const [items, setItems] = useState([]);
 
 	useEffect(() => {
@@ -17,6 +16,10 @@ const Content = () => {
 			});
 	}, []);
 
+	const onAddToBasket = (obj) => {
+		console.log(obj);
+	};
+
 	return (
 		<div className="section__content">
 			<div className="search">
@@ -27,13 +30,16 @@ const Content = () => {
 				</div>
 			</div>
 			<div className="wrap_snkrs">
-				{items.map((obj) => (
+				{items.map((item) => (
 					<ItemCard
-						cros={'./src/components/content/img/' + obj['img'] + '.svg'}
-						name={obj.name}
-						price={obj.price}
+						cros={'./src/components/content/img/' + item['img'] + '.svg'}
+						name={item.name}
+						price={item.price}
+						onPlus={(obj) => {
+							onAddToBasket(obj);
+						}}
 					/>
-				))} 
+				))}
 			</div>
 		</div>
 	);

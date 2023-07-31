@@ -9,14 +9,16 @@ interface ItemCardProps {
 	cros: string;
 	name: string;
 	price: number;
+	onPlus: () => void;
 }
 
-const ItemCard = ({ cros, name, price }: ItemCardProps) => {
+const ItemCard = ({ cros, name, price, onPlus }: ItemCardProps) => {
 	const [isAdd, setIsAdd] = useState(false);
 	const [isLike, setIsLike] = useState(false);
 
 	const onClickPlus = () => {
 		setIsAdd(!isAdd);
+		onPlus({cros, name, price});
 	};
 
 	const onClickLike = () => {

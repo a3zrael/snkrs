@@ -11,7 +11,7 @@ interface BasketProps {
 	items: any;
 }
 
-const Basket = ({ onCloseBasket, items }: BasketProps) => {
+const Basket = ({ onCloseBasket, items = [] }: BasketProps) => {
 	return (
 		<div className="wrap_close">
 			<div className="overlay" onClick={onCloseBasket}></div>
@@ -24,8 +24,12 @@ const Basket = ({ onCloseBasket, items }: BasketProps) => {
 				</div>
 				<div className="basket">
 					<div className="list">
-						{items.map((obj: any) =>(
-							<ItemBasket /> 
+						{items.map((obj: any) => (
+							<ItemBasket
+								cros={'./src/components/content/img/' + obj['img'] + '.svg'}
+								name={obj.name}
+								price={obj.price}
+							/>
 						))}
 					</div>
 					<div className="wrap_info">

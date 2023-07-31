@@ -2,13 +2,19 @@ import './itemBasket.scss';
 import cros from './img/cros1.svg';
 import cancel from './img/krest.svg';
 
-const itemBasket = () => {
+interface itemBasketProps {
+	name: string,
+	cros: string,
+	price: number,
+}
+
+const itemBasket = ({name, cros, price} : itemBasketProps) => {
 	return (
 		<div className="wrap_card">
 			<img className="snkr" src={cros} alt="" />
 			<div className="info">
-				<p>Мужские Кроссовки Nike Air Max 270</p>
-				<div className="price">12 999 руб.</div>
+				<p>{name}</p>
+				<div className="price">{price} руб.</div>
 			</div>
 
 			<button>

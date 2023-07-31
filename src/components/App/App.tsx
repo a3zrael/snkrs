@@ -9,7 +9,7 @@ import Basket from '../basket/basket';
 
 const App = () => {
 	const [basketOpened, setBasketOpened] = useState(false);
-	const [cardItems, setCarItems] = useState();
+	const [cardItems, setCardItems] = useState();
 
 	return (
 		<>
@@ -17,7 +17,10 @@ const App = () => {
 			<Swiper />
 			<Content />
 			{basketOpened ? (
-				<Basket onCloseBasket={() => setBasketOpened(false)} />
+				<Basket
+					onCloseBasket={() => setBasketOpened(false)}
+					items={cardItems}
+				/>
 			) : null}
 		</>
 	);
