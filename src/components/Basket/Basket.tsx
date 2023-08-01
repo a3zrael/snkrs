@@ -3,8 +3,6 @@ import ItemBasket from '../ui/itemBasket/itemBasket';
 import Button from '../ui/button/button';
 import arro from './img/arro.svg';
 import krest from './img/krest.svg';
-// import box from './img/box.svg'
-// import compl from './img/complete.svg'
 
 interface BasketProps {
 	onCloseBasket: () => void;
@@ -24,13 +22,15 @@ const Basket = ({ onCloseBasket, items = [] }: BasketProps) => {
 				</div>
 				<div className="basket">
 					<div className="list">
-						{items.map((obj: any) => (
-							<ItemBasket
-								cros={'./src/components/content/img/' + obj['img'] + '.svg'}
-								name={obj.name}
-								price={obj.price}
-							/>
-						))}
+						{items.map((obj: any) => {
+							return (
+								<ItemBasket
+									img={obj['img']}
+									name={obj.name}
+									price={obj.price}
+								/>
+							);
+						})}
 					</div>
 					<div className="wrap_info">
 						<div className="item">

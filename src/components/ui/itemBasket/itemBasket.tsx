@@ -1,17 +1,17 @@
 import './itemBasket.scss';
-import cros from './img/cros1.svg';
+// import cros from './img/cros1.svg';
 import cancel from './img/krest.svg';
 
 interface itemBasketProps {
-	name: string,
-	cros: string,
-	price: number,
+	name: string;
+	img: string;
+	price: number;
 }
 
-const itemBasket = ({name, cros, price} : itemBasketProps) => {
+const itemBasket = ({ name, img, price }: itemBasketProps) => {
 	return (
 		<div className="wrap_card">
-			<img className="snkr" src={cros} alt="" />
+			<img className="snkr" src={img} alt="" />
 			<div className="info">
 				<p>{name}</p>
 				<div className="price">{price} руб.</div>

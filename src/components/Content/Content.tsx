@@ -3,8 +3,18 @@ import lupa from './img/lupa.svg';
 import ItemCard from '../ui/itemCard/itemCard.tsx';
 import { useEffect, useState } from 'react';
 
-const Content = () => {
-	const [items, setItems] = useState([]);
+interface ItemCardProps {
+	setItemsBasket: any;
+}
+
+const Content = ({ setItemsBasket }: ItemCardProps) => {
+	const [items, setItems] = useState<
+		{
+			img: string;
+			name: string;
+			price: number;
+		}[]
+	>([]);
 
 	useEffect(() => {
 		fetch('https://64c1236cfa35860baea00c5e.mockapi.io/items')
@@ -16,8 +26,8 @@ const Content = () => {
 			});
 	}, []);
 
-	const onAddToBasket = (obj) => {
-		console.log(obj);
+	const onAddToBasket = (obj: any) => {
+		setItemsBasket((prev: any) => [...prev, obj]);
 	};
 
 	return (
@@ -32,7 +42,7 @@ const Content = () => {
 			<div className="wrap_snkrs">
 				{items.map((item) => (
 					<ItemCard
-						cros={'./src/components/content/img/' + item['img'] + '.svg'}
+						img={'./src/img/' + item['img'] + '.svg'}
 						name={item.name}
 						price={item.price}
 						onPlus={(obj) => {

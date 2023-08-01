@@ -9,13 +9,13 @@ import Basket from '../basket/basket';
 
 const App = () => {
 	const [basketOpened, setBasketOpened] = useState(false);
-	const [cardItems, setCardItems] = useState();
+	const [cardItems, setCardItems] = useState<any>([]);
 
 	return (
 		<>
 			<Header onClickBasket={() => setBasketOpened(true)} />
 			<Swiper />
-			<Content />
+			<Content setItemsBasket={setCardItems} />
 			{basketOpened ? (
 				<Basket
 					onCloseBasket={() => setBasketOpened(false)}

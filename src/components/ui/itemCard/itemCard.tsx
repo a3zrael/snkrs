@@ -6,19 +6,19 @@ import liked from './img/liked.svg';
 import activeLiked from './img/activeLiked.svg';
 
 interface ItemCardProps {
-	cros: string;
+	img: string;
 	name: string;
 	price: number;
-	onPlus: () => void;
+	onPlus: (value: {}) => void;
 }
 
-const ItemCard = ({ cros, name, price, onPlus }: ItemCardProps) => {
+const ItemCard = ({ img, name, price, onPlus }: ItemCardProps) => {
 	const [isAdd, setIsAdd] = useState(false);
 	const [isLike, setIsLike] = useState(false);
 
 	const onClickPlus = () => {
 		setIsAdd(!isAdd);
-		onPlus({cros, name, price});
+		onPlus({ img, name, price });
 	};
 
 	const onClickLike = () => {
@@ -31,7 +31,7 @@ const ItemCard = ({ cros, name, price, onPlus }: ItemCardProps) => {
 				<img src={isLike ? activeLiked : liked} alt="like" />
 			</div>
 			<div className="img_box">
-				<img className="cros" src={cros} alt="snkrs" />
+				<img className="cros" src={img} alt="snkrs" />
 			</div>
 			<p className="name">{name}</p>
 			<div className="plus_basket">
@@ -41,7 +41,6 @@ const ItemCard = ({ cros, name, price, onPlus }: ItemCardProps) => {
 				</div>
 				<button onClick={onClickPlus}>
 					<img className="plus" src={isAdd ? greenPlus : plus} alt="plus" />
-					<img className="plus_active" src={greenPlus} alt="" />
 				</button>
 			</div>
 		</div>
