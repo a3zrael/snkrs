@@ -22,9 +22,10 @@ const Basket = ({ onCloseBasket, items = [] }: BasketProps) => {
 				</div>
 				<div className="basket">
 					<div className="list">
-						{items.map((obj: any) => {
+						{items.map((obj: any, index: any) => {
 							return (
 								<ItemBasket
+									key={index}
 									img={obj['img']}
 									name={obj.name}
 									price={obj.price}

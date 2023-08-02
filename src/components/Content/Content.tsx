@@ -8,6 +8,9 @@ interface ItemCardProps {
 }
 
 const Content = ({ setItemsBasket }: ItemCardProps) => {
+
+	const [searchValue,setSearchValue] = useState('')
+
 	const [items, setItems] = useState<
 		{
 			img: string;
@@ -30,18 +33,23 @@ const Content = ({ setItemsBasket }: ItemCardProps) => {
 		setItemsBasket((prev: any) => [...prev, obj]);
 	};
 
+	const onChangeSearchInput = (event: any) =>{
+		setSearchValue(event.target.value);
+	} 
+
 	return (
 		<div className="section__content">
 			<div className="search">
-				<h3 className="title">Все кроссовки</h3>
+				<h3 className="title">{searchValue ? `Поиск по запросу: "${searchValue}"`: "Все кроссовки"}</h3>
 				<div className="box__input">
 					<img src={lupa} alt="" />
-					<input type="text" placeholder="Поиск..." />
+					<input onChange={onChangeSearchInput} type="text" placeholder="Поиск..." />
 				</div>
 			</div>
 			<div className="wrap_snkrs">
-				{items.map((item) => (
+				{items.map((item, index) => (
 					<ItemCard
+						key={index}
 						img={'./src/img/' + item['img'] + '.svg'}
 						name={item.name}
 						price={item.price}
