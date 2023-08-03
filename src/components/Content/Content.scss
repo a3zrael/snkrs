@@ -23,10 +23,10 @@
 		.box__input {
 			position: relative;
 
-			img {
-				position: inherit;
-				top: 3px;
-				left: 30px;
+			.lupa {
+				position: absolute;
+				top: 14px;
+				left: 19px;
 			}
 
 			input {
@@ -36,6 +36,14 @@
 				flex-shrink: 0;
 				border-radius: 10px;
 				border: 1px solid #f3f3f3;
+			}
+
+			.clear {
+				position: absolute;
+				top: 7px;
+				right: 5px;
+				color:#c9c9c9;
+				cursor: pointer;
 			}
 		}
 	}
