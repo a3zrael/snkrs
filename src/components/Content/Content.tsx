@@ -44,8 +44,14 @@ const Content = ({ setItemsBasket }: ItemCardProps) => {
 					{searchValue ? `Поиск по запросу: "${searchValue}"` : 'Все кроссовки'}
 				</h3>
 				<div className="box__input">
-				<img className='lupa' src={lupa} alt="" />
-					{searchValue && <img className='clear' src={krest} onClick={() => setSearchValue('')}/>}
+					<img className="lupa" src={lupa} alt="" />
+					{searchValue && (
+						<img
+							className="clear"
+							src={krest}
+							onClick={() => setSearchValue('')}
+						/>
+					)}
 					<input
 						onChange={onChangeSearchInput}
 						type="text"
@@ -55,17 +61,19 @@ const Content = ({ setItemsBasket }: ItemCardProps) => {
 				</div>
 			</div>
 			<div className="wrap_snkrs">
-				{items.map((item, index) => (
-					<ItemCard
-						key={index}
-						img={'./src/img/' + item['img'] + '.svg'}
-						name={item.name}
-						price={item.price}
-						onPlus={(obj) => {
-							onAddToBasket(obj);
-						}}
-					/>
-				))}
+				{items
+					.filter((item) => item.name.toLowerCase().includes(searchValue))
+					.map((item, index) => (
+						<ItemCard
+							key={index}
+							img={'./src/img/' + item['img'] + '.svg'}
+							name={item.name}
+							price={item.price}
+							onPlus={(obj) => {
+								onAddToBasket(obj);
+							}}
+						/>
+					))}
 			</div>
 		</div>
 	);
