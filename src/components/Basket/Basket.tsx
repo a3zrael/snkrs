@@ -6,10 +6,11 @@ import krest from './img/krest.svg';
 
 interface BasketProps {
 	onCloseBasket: () => void;
+	onRemoveItemBasket: (value: number) => void;
 	items: any;
 }
 
-const Basket = ({ onCloseBasket, items = [] }: BasketProps) => {
+const Basket = ({ onCloseBasket,onRemoveItemBasket, items = [] }: BasketProps) => {
 	return (
 		<div className="wrap_close">
 			<div className="overlay" onClick={onCloseBasket}></div>
@@ -29,6 +30,7 @@ const Basket = ({ onCloseBasket, items = [] }: BasketProps) => {
 									img={obj['img']}
 									name={obj.name}
 									price={obj.price}
+									onRemoveItemBasket={onRemoveItemBasket(obj.id)}
 								/>
 							);
 						})}

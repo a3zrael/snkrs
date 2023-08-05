@@ -1,14 +1,14 @@
 import './itemBasket.scss';
-// import cros from './img/cros1.svg';
 import cancel from './img/krest.svg';
 
 interface itemBasketProps {
 	name: string;
 	img: string;
 	price: number;
+	onRemoveItemBasket:() => void
 }
 
-const itemBasket = ({ name, img, price }: itemBasketProps) => {
+const itemBasket = ({ name, img, price,onRemoveItemBasket }: itemBasketProps) => {
 	return (
 		<div className="wrap_card">
 			<img className="snkr" src={img} alt="" />
@@ -17,7 +17,7 @@ const itemBasket = ({ name, img, price }: itemBasketProps) => {
 				<div className="price">{price} руб.</div>
 			</div>
 
-			<button>
+			<button onClick={() => onRemoveItemBasket(id)}>
 				<img className="last__cancel" src={cancel} alt="" />
 			</button>
 		</div>

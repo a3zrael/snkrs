@@ -2,40 +2,17 @@ import './Content.scss';
 import lupa from './img/lupa.svg';
 import krest from './img/krest.svg';
 import ItemCard from '../ui/itemCard/itemCard.tsx';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
-interface ItemCardProps {
-	setItemsBasket: any;
+
+interface ContentProps {
+	onAddToBasket: (value:{}) => void;
+	items: [];
 }
 
-const Content = ({ setItemsBasket }: ItemCardProps) => {
+const Content = ({ items, onAddToBasket,  }: ContentProps) => {
+
 	const [searchValue, setSearchValue] = useState('');
-
-	const [items, setItems] = useState<
-		{
-			img: string;
-			name: string;
-			price: number;
-		}[]
-	>([]);
-
-	useEffect(() => {
-		fetch('https://64c1236cfa35860baea00c5e.mockapi.io/items')
-			.then((res) => {
-				return res.json();
-			})
-			.then((json) => {
-				setItems(json);
-			});
-	}, []);
-
-	const onAddToBasket = (obj: any) => {
-		setItemsBasket((prev: any) => [...prev, obj]);
-	};
-
-	const onChangeSearchInput = (event: any) => {
-		setSearchValue(event.target.value);
-	};
 
 	return (
 		<div className="section__content">
@@ -53,7 +30,9 @@ const Content = ({ setItemsBasket }: ItemCardProps) => {
 						/>
 					)}
 					<input
-						onChange={onChangeSearchInput}
+						onChange={(event: any) => {
+							setSearchValue(event.target.value);
+						}}
 						type="text"
 						placeholder="Поиск..."
 						value={searchValue}
@@ -62,8 +41,8 @@ const Content = ({ setItemsBasket }: ItemCardProps) => {
 			</div>
 			<div className="wrap_snkrs">
 				{items
-					.filter((item) => item.name.toLowerCase().includes(searchValue))
-					.map((item, index) => (
+					.filter((item: any) => item.name.toLowerCase().includes(searchValue))
+					.map((item: any, index: any) => (
 						<ItemCard
 							key={index}
 							img={'./src/img/' + item['img'] + '.svg'}
