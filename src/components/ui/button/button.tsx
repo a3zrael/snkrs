@@ -3,11 +3,12 @@ interface ButtonProps {
 	value: string;
 	imgFirls?: string;
 	imgLast?: string;
+	onClick: any
 }
 
-const button = ({ value, imgFirls, imgLast }: ButtonProps) => {
+const button = ({ value, imgFirls, imgLast, onClick }: ButtonProps) => {
 	return (
-		<button>
+		<button onClick={onClick}>
 			<img src={imgFirls} alt="" /> {value} <img src={imgLast} alt="" />
 		</button>
 	);

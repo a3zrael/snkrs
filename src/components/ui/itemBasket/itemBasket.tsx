@@ -5,10 +5,15 @@ interface itemBasketProps {
 	name: string;
 	img: string;
 	price: number;
-	onRemoveItemBasket:() => void
+	onRemove: () => void;
 }
 
-const itemBasket = ({ name, img, price,onRemoveItemBasket }: itemBasketProps) => {
+const itemBasket = ({
+	name,
+	img,
+	price,
+	onRemove,
+}: itemBasketProps) => {
 	return (
 		<div className="wrap_card">
 			<img className="snkr" src={img} alt="" />
@@ -17,7 +22,7 @@ const itemBasket = ({ name, img, price,onRemoveItemBasket }: itemBasketProps) =>
 				<div className="price">{price} руб.</div>
 			</div>
 
-			<button onClick={() => onRemoveItemBasket(id)}>
+			<button onClick={() => onRemove()}>
 				<img className="last__cancel" src={cancel} alt="" />
 			</button>
 		</div>

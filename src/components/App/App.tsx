@@ -8,14 +8,9 @@ import Content from '../content/content';
 import Basket from '../basket/basket';
 import axios from 'axios';
 
-// interface ItemCardProps {
-// 	setItemsBasket: any;
-// }
-
 const App = () => {
 	const [basketOpened, setBasketOpened] = useState(false);
 	const [cardItems, setCardItems] = useState<any>([]);
-
 
 	const [items, setItems] = useState<
 		{
@@ -26,16 +21,19 @@ const App = () => {
 	>([]);
 
 	useEffect(() => {
+		func1();
+		func2();
+	}, []);
+
+	const func1 = () => {
 		axios
 			.get('https://64c1236cfa35860baea00c5e.mockapi.io/items')
 			.then((res) => {
 				setItems(res.data);
 			});
+	};
 
-		getBasketCards();
-	}, []);
-
-	const getBasketCards = () => {
+	const func2 = () => {
 		axios
 			.get('https://64c1236cfa35860baea00c5e.mockapi.io/basket')
 			.then((res) => {
@@ -47,26 +45,19 @@ const App = () => {
 		axios.post('https://64c1236cfa35860baea00c5e.mockapi.io/basket', obj);
 		setCardItems((prev: any) => [...prev, obj]);
 	};
-
+// сделать лоадер на трай кетч с стейтом 
 	const onRemoveItemBasket = (id: number) => {
-		// axios
-		// 	.delete(`https://64c1236cfa35860baea00c5e.mockapi.io/basket/${id}`)			
-		console.log('deled');
-		
+		axios.delete(`https://64c1236cfa35860baea00c5e.mockapi.io/basket/${id}`).then(() => func2())
 	};
-
 
 	return (
 		<>
 			<Header onClickBasket={() => setBasketOpened(true)} />
 			<Swiper />
-			<Content
-				items={items}
-				onAddToBasket={onAddToBasket}
-			/>
+			<Content items={items} onAddToBasket={onAddToBasket} />
 			{basketOpened ? (
 				<Basket
-					onRemoveItemBasket={onRemoveItemBasket}
+					onRemove={onRemoveItemBasket}
 					onCloseBasket={() => setBasketOpened(false)}
 					items={cardItems}
 				/>

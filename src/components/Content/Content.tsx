@@ -7,7 +7,7 @@ import { useState } from 'react';
 
 interface ContentProps {
 	onAddToBasket: (value:{}) => void;
-	items: [];
+	items: any;
 }
 
 const Content = ({ items, onAddToBasket,  }: ContentProps) => {
