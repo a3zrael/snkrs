@@ -4,7 +4,7 @@ import Button from '../ui/button/button';
 import arro from './img/arro.svg';
 import krest from './img/krest.svg';
 import box from './img/box.svg';
-import { useState } from 'react';
+// import { useState } from 'react';
 
 interface BasketProps {
 	onCloseBasket: () => void;

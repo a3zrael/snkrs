@@ -2,10 +2,10 @@ import './App.module.scss';
 
 import { useState, useEffect } from 'react';
 
-import Header from '../header/header';
-import Swiper from '../swiper/swiper';
-import Content from '../content/content';
-import Basket from '../basket/basket';
+import Header from '../Header/Header';
+import Swiper from '../Swiper/Swiper';
+import Content from '../Content/Content';
+import Basket from '../Basket/Basket';
 import axios from 'axios';
 
 const App = () => {
