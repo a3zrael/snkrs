@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * snkrs-react service
+ * basket service
  */
 
 const { createCoreService } = require('@strapi/strapi').factories;
 
-module.exports = createCoreService('api::snkrs-react.snkrs-react');
+module.exports = createCoreService('api::basket.basket');

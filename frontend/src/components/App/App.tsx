@@ -26,28 +26,36 @@ const App = () => {
 	}, []);
 
 	const func1 = () => {
-		axios
-			.get('https://64c1236cfa35860baea00c5e.mockapi.io/items')
-			.then((res) => {
-				setItems(res.data);
-			});
+		axios.get('http://localhost:1337/api/items/').then((res) => {
+			const result = res.data.data.map((element: any) => ({
+				id: element.id,
+				img: element.attributes.img,
+				name: element.attributes.name,
+				price: element.attributes.price,
+			}));
+			setItems(result);
+		});
 	};
 
 	const func2 = () => {
-		axios
-			.get('https://64c1236cfa35860baea00c5e.mockapi.io/basket')
-			.then((res) => {
-				setCardItems(res.data);
-			});
+		axios.get('http://localhost:1337/api/baskets').then((res) => {
+			const result = res.data.data.map((element: any) => ({
+				id: element.id,
+				img: element.attributes.img,
+				name: element.attributes.name,
+				price: element.attributes.price,
+			}));
+			setCardItems(result);
+		});
 	};
 
 	const onAddToBasket = (obj: any) => {
-		axios.post('https://64c1236cfa35860baea00c5e.mockapi.io/basket', obj);
+		axios.post('http://localhost:1337/api/baskets', { data: obj });
 		setCardItems((prev: any) => [...prev, obj]);
 	};
-// сделать лоадер на трай кетч с стейтом 
+	// сделать лоадер на трай кетч с стейтом
 	const onRemoveItemBasket = (id: number) => {
-		axios.delete(`https://64c1236cfa35860baea00c5e.mockapi.io/basket/${id}`).then(() => func2())
+		axios.delete(`http://localhost:1337/api/basket/${id}`).then(() => func2());
 	};
 
 	return (

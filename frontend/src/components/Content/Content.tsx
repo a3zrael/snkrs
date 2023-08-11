@@ -13,7 +13,7 @@ interface ContentProps {
 const Content = ({ items, onAddToBasket,  }: ContentProps) => {
 
 	const [searchValue, setSearchValue] = useState('');
-
+	
 	return (
 		<div className="section__content">
 			<div className="search">
